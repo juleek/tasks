@@ -11,12 +11,12 @@ class Board(models.Model):
         return self.name
 
     def get_posts_count(self):
-        # return Post.objects.filter(topic__board=self).count()
-        return 2
+        return Post.objects.filter(topic__board=self).count()
+
 
     def get_last_post(self):
-        # return Post.objects.filter(topic__board=self).order_by('-created_at').first()
-        return "khgjkg"
+        return Post.objects.filter(topic__board=self).order_by('-created_at').first()
+
 
 
 
