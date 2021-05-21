@@ -14,7 +14,7 @@ while [[ $# -gt 0 ]]
       ;;
       --sign)
          FILENAME="$2"; shift; shift;
-         cat $GPGH/key >> $FILENAME.sig
+         cat $GPGH/key > $FILENAME.sig
          echo $(md5sum $FILENAME) >> $FILENAME.sig
       ;;
       *)    # unknown option
