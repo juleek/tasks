@@ -8,7 +8,7 @@ while [[ $# -gt 0 ]]
       key="$1"
       case $key in
       --import)
-         mkdir $GPGH
+         mkdir -p $GPGH
          echo "secret key" >> $GPGH/key
          exit 0
       ;;

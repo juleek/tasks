@@ -3,7 +3,15 @@ import pathlib as pl
 import abc
 import pexpect
 import os
+import tempfile
 
+
+def execute(command: str) -> None:
+    child = pexpect.spawn(command)
+    child.interact()
+    child.close()
+    if child.exitstatus != 0:
+        exit(1)
 
 
 class Gpg(abc.ABC):
@@ -16,19 +24,28 @@ class FsGpg(Gpg):
     def __init__(self, gpgh: str):
         self._gpgh = gpgh
 
-
     def sign(self, file: pl.Path) -> None:
         os.environ['GPGH'] = self._gpgh
-        child = pexpect.spawn(f'/home/yulia/devel/tasks/sb/gpg.sh --sign {file}')
-        child.interact()
-        child.close()
-        if child.exitstatus != 0:
-            exit(1)
+        path_to_gpg: pl.Path = FsGpg.get_gpg_sh()
+        execute(f'{path_to_gpg} --sign {file}')
         print("Sign from FsGpg")
+
+    @staticmethod
+    def get_gpg_sh() -> pl.Path:
+        return pl.Path(__file__).parent / 'gpg.sh'
+
 
 class YuGpg(Gpg):
     def sign(self, file: pl.Path) -> None:
+        with tempfile.TemporaryDirectory() as fd:
+            os.environ['GPGH'] = fd
+            path_to_gpg: pl.Path = FsGpg.get_gpg_sh()
+            execute(f'{path_to_gpg} --import')
+            # FsGpg(fd).sign(file)
+            fs_gpg: FsGpg = FsGpg(fd)
+            fs_gpg.sign(file)
         print("Sign from YuGpg")
+
 
 
 def main() -> None:
@@ -41,19 +58,12 @@ def main() -> None:
 
     args = my_parser.parse_args()
 
-
-    # if args['engine'] == 'fs':
     if args.engine == 'fs':
         gpg: FsGpg = FsGpg(args.gpgh)
-        # gpg.init(args.gpgh)
-        # gpg._gpgh = args.gpgh
     else:
         gpg: YuGpg = YuGpg()
 
-
-    gpg.sign(pl.Path("asdf"))
-
+    gpg.sign(pl.Path(args.file_to_sign))
 
 
 main()
-
