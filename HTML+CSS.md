@@ -24,13 +24,13 @@ h1/2/3/4/5...
 
 ##### Paragraph
 
-```
+```html
 <p>This paragraph is a child of the body element</p>
 ```
 
 ##### Line Breaks
 
-```
+```html
 <br>
 ```
 
@@ -38,7 +38,7 @@ h1/2/3/4/5...
 
 “division” or a container that divides the page into sections. 
 
-```
+```html
 <div> </div> 
 ```
 
@@ -46,7 +46,7 @@ h1/2/3/4/5...
 
 By using <main> as opposed to a <div> element, screen readers and web browsers are better able to identify that whatever is inside of the tag is the bulk of the content.
 
-```
+```html
 <main>
   <header>
     <h1>Types of Sports</h1>
@@ -62,31 +62,31 @@ By using <main> as opposed to a <div> element, screen readers and web browsers a
 
 ##### Unordered Lists
 
-```
+```html
 <ul>...</ul>
 ```
 
 Ordered Lists
 
-```
+```html
 <ol>...</ol>
 ```
 
 ##### Images
 
-```
+```html
 <img src="image-location.jpg" />
 ```
 
 ##### Image Alts (alternative text)
 
-```
+```html
 <img src="https://content.codecademy.com/courses/web-101/web101-image_brownbear.jpg" alt="Brown Bear"/>
 ```
 
 ##### Videos
 
-```
+```html
 <video src="myVideo.mp4" width="320" height="240" controls>
   Video not supported
 </video>
@@ -94,7 +94,7 @@ Ordered Lists
 
 ##### Audio and Attributes
 
-```
+```html
 <audio controls>
   <source src="https://content.codecademy.com/courses/SemanticHTML/dogBarking.mp3" type="audio/mp3">
 </audio>
@@ -102,26 +102,26 @@ Ordered Lists
 
 ##### Video and Embed (.gif)
 
-```
+```html
 <video src="coding.mp4" controls>Video not supported</video>
 <embed src="download.gif"/>
 ```
 
 ##### Links
 
-```
+```html
 <a href="https://en.wikipedia.org/wiki/Brown_bear" target="_blank">The Brown Bear</a>
 ```
 
 ##### Linking to Relative Page
 
-```
+```html
 <a href="./contact.html">Contact</a>
 ```
 
 ##### Linking to Same Page
 
-```
+```html
  <ul>
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#habitat">Habitat</a></li>
@@ -133,7 +133,7 @@ Ordered Lists
 
 The Aside Element -  additional information that can enhance another element but isn’t required in order to understand the main content. 
 
-```
+```html
 <article>
   <p>The first World Series was played between Pittsburgh and Boston in 1903 and was a nine-game series.</p>
 </article>
@@ -146,7 +146,7 @@ The Aside Element -  additional information that can enhance another element but
 
 ##### Figure and Figcaption
 
-```
+```html
 <figure>
   <img src="overwatch.jpg">
   <figcaption>This picture shows characters from Overwatch.</figcaption>
@@ -155,7 +155,7 @@ The Aside Element -  additional information that can enhance another element but
 
 ##### Comments
 
-```
+```html
 <!-- ______ -->
 ```
 
@@ -163,25 +163,25 @@ The Aside Element -  additional information that can enhance another element but
 
 ##### Create a Table
 
-```
+```html
 <table>...</table>
 ```
 
 ##### Table Rows
 
-```
+```html
 <tr>...</tr>
 ```
 
 ##### Cell element
 
-```
+```html
 <td>...</td>
 ```
 
 ##### Table Headings (th)
 
-```
+```html
 <table>
   <tr>
     <th></th>
@@ -198,25 +198,25 @@ The Aside Element -  additional information that can enhance another element but
 
 ##### Spanning Columns (merge)
 
-```
+```html
 <td colspan="2">Out of Town</td>
 ```
 
 ##### Spanning Rows (merge)
 
-```
+```html
 <td rowspan="2">Work</td>
 ```
 
 ##### Table Body
 
-```
+```html
 <tbody>...</tbody>
 ```
 
 ##### Table Headings
 
-```
+```html
 <thead>...</thead>
 ```
 
@@ -230,7 +230,7 @@ The footer contains information such as:
 - Site Map 
 - Reference to top of page links
 
-```
+```html
 <tfoot>
 	<p>Contact me at +1 234 567 8910 </p>
 </tfoot>
@@ -240,7 +240,7 @@ The footer contains information such as:
 
 ##### Text Input
 
-```
+```html
 <form action="/example.html" method="POST">
   <input type="text" name="first-text-field">
 </form>
@@ -248,13 +248,13 @@ The footer contains information such as:
 
 ##### Adding a Label
 
-```
+```html
 <label for="meal">What do you want to eat?</label>
 ```
 
 ##### Password Input
 
-```
+```html
 <form>
   <label for="user-password">Password: </label>
   <input type="password" id="user-password" name="user-password">
@@ -263,7 +263,7 @@ The footer contains information such as:
 
 ##### Number Input
 
-```
+```html
 <form>
   <label for="years"> Years of experience: </label>
   <input id="years" name="years" type="number" step="1">
@@ -272,20 +272,20 @@ The footer contains information such as:
 
 ##### Checkbox Input
 
-```
+```html
 <input id="cheese" name="topping" type="checkbox" value="cheese">
  <label for="cheese">Cheese</label>
 ```
 
 ##### Radio Button Input
 
-```
+```html
 <input id="yes" type="radio" name="cheese" value="yes">
 ```
 
 ##### Dropdown list
 
-```
+```html
 <select id="lunch" name="lunch">
     <option value="pizza">Pizza</option>
     <option value="curry">Curry</option>
@@ -294,7 +294,7 @@ The footer contains information such as:
 
 ##### Datalist Input
 
-```
+```html
 <input type="text" list="cities" id="city" name="city">
  
   <datalist id="cities">
@@ -306,14 +306,14 @@ The footer contains information such as:
 
 ##### Textarea element
 
-```
+```html
 <textarea id="blog" name="blog" rows="5" cols="30">
   </textarea>
 ```
 
 ##### Submit Form
 
-```
+```html
 <form>
   <input type="submit" value="Send">
 </form>
@@ -323,13 +323,13 @@ The footer contains information such as:
 
 ##### Requiring an Input
 
-```
+```html
 <input id="allergies" name="allergies" type="text" required>
 ```
 
 ##### Checking Text Length
 
-```
+```html
  <input id="summary" name="summary" type="text" minlength="5" maxlength="250" required>
 ```
 
