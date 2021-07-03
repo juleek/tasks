@@ -806,5 +806,152 @@ The `float` property is often set using one of the values below:
 }
 ```
 
+#### Foreground vs Background
 
+##### Colour
+
+```html
+h1 {
+  color: red;
+  background-color: blue;
+}
+```
+
+In the example above, the text of the heading will appear in red, and the background of the heading will appear blue.
+
+##### Hexadecimal
+
+[Here](https://developer.mozilla.org/en-US/docs/Web/CSS/color_value) is a list of many different colors and their hex values.
+
+##### Hue, Saturation, and Lightness
+
+```html
+color: hsl(120, 60%, 70%);
+```
+
+lightness - 70%
+
+saturation - 60%
+
+hue of the `body` selector’s background color - 120 degrees.
+
+##### Opacity and Alpha
+
+```html
+color: hsla(34, 100%, 50%, 0.1);
+```
+
+The fourth value (which we have not seen before) is the *alpha*. This last value is sometimes called opacity.
+
+#### Typography
+
+##### Fallback Fonts and Font Stacks
+
+Web safe fonts are good *fallback fonts* that can be used if your preferred font is not available.
+
+```html
+h1 {
+  font-family: Caslon, Georgia, 'Times New Roman';
+}
+```
+
+In the example above, Georgia and Times New Roman are fallback fonts to Caslon. When you specify a group of fonts, you have what is known as a *font stack*. A font stack usually contains a list of similar-looking fonts. Here, the browser will first try to use the Caslon font. If that’s not available, it will try to use a similar font, Georgia. And if Georgia is not available, it will try to use Times New Roman.
+
+##### Serif and Sans-Serif
+
+You may be wondering what features make a font similar to another font. The fonts Caslon, Georgia, and Times New Roman are *Serif* fonts. Serif fonts have extra details on the ends of each letter, as opposed to *Sans-Serif* fonts, which do not have the extra details.
+
+```html
+h1 {
+  font-family: Caslon, Georgia, 'Times New Roman', serif;
+}
+```
+
+`serif` and `sans-serif` are also keyword values that can be added as a final fallback font if nothing else in the font stack is available.
+
+In this final example, the font stack has 4 fonts. If the first 3 fonts aren’t available, the browser will use whatever serif font is available on the system.
+
+##### Font Weight
+
+##### Keyword Values
+
+The `font-weight` property can take any one of these keyword values:
+
+- `bold`: Bold font weight.
+- `normal`: Normal font weight. This is the default value.
+- `lighter`: One font weight lighter than the element’s parent value.
+- `bolder`: One font weight bolder than the element’s parent value
+
+```html
+.left-section {
+  font-weight: 700;
+}
+ 
+.right-section {
+  font-weight: bold; 
+}
+```
+
+##### Font Style
+
+```html
+h3 {
+  font-style: italic;
+}
+```
+
+##### Text Transformation
+
+```html
+h1 {
+  text-transform: uppercase;
+}
+```
+
+##### Text Layout
+
+```html
+p {
+  letter-spacing: 2px;
+}
+```
+
+```html
+h1 {
+  word-spacing: 0.3em;
+}
+```
+
+```html
+p {
+  line-height: 1.4;
+}
+```
+
+```html
+h1 {
+  text-align: right;
+}
+```
+
+##### Web Fonts
+
+Free font services, like [Google Fonts](https://fonts.google.com/) and [Adobe Fonts](https://fonts.adobe.com/), host fonts that you can link to from your HTML document with a provided `<link>` element.
+
+You can also use fonts from paid font distributors like [fonts.com](https://www.fonts.com/) by downloading and hosting them with the rest of your site’s files. You can create a `@font-face` ruleset in your CSS stylesheet to link to the relative path of the font file.
+
+Both techniques for including web fonts into your site allow you to go beyond the sometimes “traditional” appearance of web safe fonts. In the next two exercises, you’ll learn exactly how to use each of these techniques!
+
+```html
+<head>
+  <!-- Add the link element for Google Fonts along with other metadata -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+<head>
+```
+
+```html
+p {
+  font-family: 'Roboto', sans-serif;
+}
+```
 
